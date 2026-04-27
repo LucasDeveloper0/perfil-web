@@ -1,0 +1,235 @@
+/* Variáveis CSS e Reset Obrigatórios */
+:root {
+    --cor-primaria: #2F6EB5;
+    --cor-fundo: #F5F5F5;
+    --cor-texto: #333333;
+    --cor-card: #FFFFFF;
+    --cor-borda: #DDDDDD;
+}
+
+/* Modo Escuro (Acionado via JS) */
+body.dark {
+    --cor-fundo: #1a1a1a;
+    --cor-texto: #f5f5f5;
+    --cor-card: #2a2a2a;
+    --cor-borda: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Seção 1 — Cabeçalho */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--cor-card);
+    padding: 20px 40px;
+    border-bottom: 2px solid var(--cor-primaria);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--cor-primaria);
+    object-fit: cover;
+}
+
+.info-perfil h1 {
+    font-size: 1.5rem;
+}
+
+.profissao {
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+nav {
+    margin-left: auto; /* Empurra o menu para a direita */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-primaria);
+}
+
+#btn-tema {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--cor-primaria);
+    background: transparent;
+    color: var(--cor-texto);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-tema:hover {
+    background: var(--cor-primaria);
+    color: white;
+}
+
+/* Seção 2 — Cards de Habilidades */
+#conteudo-principal {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#conteudo-principal h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Classe de JS para interatividade */
+.card.ativo {
+    border: 2px solid var(--cor-primaria);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.nivel {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+}
+
+/* Seção 3 — Formulário de Contato */
+#contato {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#contato h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--cor-texto);
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--cor-primaria);
+}
+
+/* Validação HTML Nativa (+ CSS) */
+input:not(:placeholder-shown):valid {
+    border-color: green;
+}
+
+input:not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
+button[type='submit'] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type='submit']:hover {
+    background-color: #1c4b82;
+}
+
+/* Estilos dinâmicos do JS */
+.erro-msg {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+#mensagem-sucesso {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#contador-container {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}

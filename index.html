@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil Profissional</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <img id="avatar" src="perfil-icon.webp" alt="Foto de perfil com fundo cinza placeholder">
+        
+        <div class="info-perfil">
+            <h1>Desenvolvedor Web</h1>
+            <p class="profissao">Front-end Engineer</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#conteudo-principal">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#">Projetos</a></li>
+            </ul>
+        </nav>
+
+        <button id="btn-tema">Modo Escuro</button>
+    </header>
+
+    <main id="conteudo-principal">
+        <h2>Minhas Habilidades</h2>
+        <div class="grid-cards">
+            <article class="card">
+                <h3>HTML5</h3>
+                <p>Estruturação semântica de páginas web com foco em SEO e acessibilidade.</p>
+                <span class="nivel">Avançado</span>
+            </article>
+
+            <article class="card">
+                <h3>CSS3</h3>
+                <p>Estilização responsiva utilizando Flexbox, Grid e variáveis CSS.</p>
+                <span class="nivel">Intermediário</span>
+            </article>
+
+            <article class="card">
+                <h3>JavaScript</h3>
+                <p>Manipulação do DOM, consumo de APIs e lógica de programação pura.</p>
+                <span class="nivel">Intermediário</span>
+            </article>
+        </div>
+    </main>
+
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        
+        <form id="form-contato">
+            <div class="campo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+            </div>
+
+            <div class="campo">
+                <label for="assunto">Assunto:</label>
+                <select id="assunto" name="assunto">
+                    <option value="freelance">Freelance</option>
+                    <option value="vaga">Oportunidade de Emprego</option>
+                    <option value="duvida">Dúvida Geral</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." maxlength="300"></textarea>
+                <div id="contador-container">
+                    <span id="contador">0 / 300 caracteres</span>
+                </div>
+            </div>
+
+            <button type="submit">Enviar Mensagem</button>
+            <div id="mensagem-sucesso"></div>
+        </form>
+    </section>
+
+</body>
+</html>
